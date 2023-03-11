@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --transition: all 0.3s ease;
+}
+
+.bayan {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input {
+  display: none !important;
+}
+label{
+  transition: var(--transition);
+}
+
+input:checked + label, input:hover + label{
+  font-size: 20px;
+  background-color: brown;
+}
+
+.bayan__section{
+  border-top: thick double #a0c3d1;
+}
