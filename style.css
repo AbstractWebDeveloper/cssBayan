@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: 0;
 }
 
 :root{
@@ -19,8 +20,8 @@ html::-webkit-scrollbar {
   height: 0;
 }
 .page{  
-  max-width: 400px;
-  margin: auto;
+  max-width: 600px;
+  margin: 0 auto;
 }
 input {
   display: none;
@@ -28,16 +29,32 @@ input {
 label{
   transition: var(--transition);
 }
+h1{
+  font-size: 4em;
+}
+span{
+  font-size: 2em;
+  font-weight: 600;
+}
+@media (max-width: 500px){
+  h1{
+    font-size: 2em;
+  }
+  span{
+    font-size: 1em;
+  }
+}
+
 
 
 .bayan {
   margin: 1rem;
 }
+.bayan__title {
+  margin-bottom: 0.5em;
+}
 .bayan__section{
   border-top: 0.2rem solid;
-}
-.bayan__section:nth-child(2){
-  margin-top: 2rem;
 }
 .bayan__content{
   display: flex;
@@ -50,9 +67,20 @@ label{
 }
 .bayan__heading{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
   border-bottom: solid var(--dark-grey);
   margin: 0 2em;
+}
+
+.bayan__octicon-x{
+  height: 16px;
+  width: 16px;
+  background-image: url("./assets/icons/octicons__x.svg");
+  transform: rotate(-45deg);
+  transition: var(--transition);
+  display: none;
 }
 
 .bayan__img {
@@ -61,6 +89,34 @@ label{
   margin: auto;
   padding: 0.5rem;
 }
-label:hover .bayan__img, input:checked ~ .bayan__content .bayan__img {
+ 
+/* hover animation */
+@media (hover: hover) {
+  .bayan__content {
+    color: blue;
+  }
+  .bayan:hover .bayan__octicon-x {
+    display: block;
+  }
+  .bayan:hover .bayan__content {
+    color: black;
+    cursor: pointer;
+  }
+  .bayan__section:hover .bayan__octicon-x{
+    transform: rotate(0deg)
+  }
+  .bayan__section:hover .bayan__img {
+    height: 30vh;
+  }
+}
+
+/* Animation */
+input:checked ~ .bayan__content .bayan__img {
   height: 30vh;
+}
+input:checked ~ .bayan__content {
+  color: black;
+}
+input:checked ~ .bayan__content .bayan__octicon-x {
+  transform: rotate(0deg)
 }
