@@ -7,56 +7,60 @@
 :root{
   --transition: all 0.3s ease;
   --bg: #EDF2EC;
+  --orange: #E06733;
+  --dark-grey: #717171;
+  --form-bg: #D6E7D2;
 }
 html{
   background-color: var(--bg);
 }
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
 .page{  
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 400px;
+  margin: auto;
 }
-
-.bayan {
-  margin: 1rem;
-}
-
 input {
-  display: none !important;
+  display: none;
 }
-
 label{
   transition: var(--transition);
 }
 
+
+.bayan {
+  margin: 1rem;
+}
 .bayan__section{
   border-top: 0.2rem solid;
-} 
+}
 .bayan__section:nth-child(2){
   margin-top: 2rem;
 }
 .bayan__content{
   display: flex;
   flex-direction: column;
-  
+  transition: var(--transition);
+}
+.bayan__content:active {
+  background: var(--form-bg);
+  border-radius: 1.5em;
 }
 .bayan__heading{
   display: flex;
   flex-direction: column;
-}
-.bayan__heading{
-  font-size: 30px;
+  border-bottom: solid var(--dark-grey);
+  margin: 0 2em;
 }
 
 .bayan__img {
   height: 0;
   transition: var(--transition);
   margin: auto;
+  padding: 0.5rem;
 }
-
-/* input:checked + label, input:hover + label{
-  font-size: 20px;
-  background-color: brown;
-} */
-label:hover .bayan__img, input:checked + label .bayan__img{
+label:hover .bayan__img, input:checked ~ .bayan__content .bayan__img {
   height: 30vh;
 }
