@@ -43,8 +43,10 @@ span{
   span{
     font-size: 1em;
   }
+  img{
+    max-width: 300px;
+  }
 }
-
 
 
 .bayan {
@@ -87,7 +89,7 @@ span{
   height: 0;
   transition: var(--transition);
   margin: auto;
-  padding: 0.5rem;
+  padding: 1rem;
 }
  
 /* hover animation */
