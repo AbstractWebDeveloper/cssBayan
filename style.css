@@ -6,25 +6,57 @@
 
 :root{
   --transition: all 0.3s ease;
+  --bg: #EDF2EC;
+}
+html{
+  background-color: var(--bg);
+}
+.page{  
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .bayan {
-  max-width: 400px;
-  margin: 0 auto;
+  margin: 1rem;
 }
 
 input {
   display: none !important;
 }
+
 label{
   transition: var(--transition);
 }
 
-input:checked + label, input:hover + label{
-  font-size: 20px;
-  background-color: brown;
+.bayan__section{
+  border-top: 0.2rem solid;
+} 
+.bayan__section:nth-child(2){
+  margin-top: 2rem;
+}
+.bayan__content{
+  display: flex;
+  flex-direction: column;
+  
+}
+.bayan__heading{
+  display: flex;
+  flex-direction: column;
+}
+.bayan__heading{
+  font-size: 30px;
 }
 
-.bayan__section{
-  border-top: thick double #a0c3d1;
+.bayan__img {
+  height: 0;
+  transition: var(--transition);
+  margin: auto;
+}
+
+/* input:checked + label, input:hover + label{
+  font-size: 20px;
+  background-color: brown;
+} */
+label:hover .bayan__img, input:checked + label .bayan__img{
+  height: 30vh;
 }
