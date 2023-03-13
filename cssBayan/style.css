@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+:root{
+  --transition: all 0.3s ease;
+  --bg: #EDF2EC;
+  --orange: #E06733;
+  --dark-grey: #717171;
+  --form-bg: #D6E7D2;
+}
+html{
+  background-color: var(--bg);
+}
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.page{  
+  max-width: 40vw;
+  margin: 0 auto;
+}
+input {
+  display: none;
+}
+label{
+  transition: var(--transition);
+}
+h1{
+  font-size: 4em;
+}
+span{
+  font-size: 2em;
+  font-weight: 600;
+}
+@media (max-width: 1600px){
+  .page{  
+    max-width: 80vw;
+  }
+}
+@media (max-width: 768px){
+  h1{
+    font-size: 3em;
+  }
+  span{
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 500px){
+  .page{  
+    max-width: 90vw;
+  }
+  h1{
+    font-size: 2em;
+  }
+  span{
+    font-size: 1em;
+  }
+  img{
+    max-width: 80%;
+  }
+}
+
+
+.bayan {
+  margin: 1rem;
+}
+.bayan__title {
+  margin-bottom: 0.5em;
+}
+.bayan__section{
+  border-top: 0.2rem solid;
+}
+.bayan__content{
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+.bayan__content:active {
+  background: var(--form-bg);
+  border-radius: 1.5em;
+}
+.bayan__heading{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: solid var(--dark-grey);
+  margin: 0 2em;
+}
+
+.bayan__octicon-x{
+  height: 1em;
+  width: 1em;
+  background-image: url("./assets/icons/octicons__x.svg");
+  background-repeat: no-repeat;
+  transform: rotate(-45deg);
+  transition: var(--transition);
+}
+
+.bayan__img {
+  height: 0;
+  transition: var(--transition);
+  margin: auto;
+  padding: 1rem;
+}
+ 
+/* hover animation */
+@media (hover: hover) {
+  .bayan__content {
+    color: blue;
+  }
+  .bayan__octicon-x{
+    display: none;
+  }
+  .bayan:hover .bayan__octicon-x {
+    display: block;
+  }
+  .bayan:hover .bayan__content {
+    color: black;
+    cursor: pointer;
+  }
+  .bayan__section:hover .bayan__octicon-x{
+    transform: rotate(0deg)
+  }
+  .bayan__section:hover .bayan__img {
+    height: 30vh;
+  }
+}
+
+/* Animation */
+input:checked ~ .bayan__content .bayan__img {
+  height: 30vh;
+}
+input:checked ~ .bayan__content {
+  color: black;
+}
+input:checked ~ .bayan__content .bayan__octicon-x {
+  transform: rotate(0deg)
+}
