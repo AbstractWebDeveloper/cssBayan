@@ -4,7 +4,6 @@
   padding: 0;
   border: 0;
 }
-
 :root{
   --transition: all 0.3s ease;
   --bg: #EDF2EC;
@@ -20,7 +19,7 @@ html::-webkit-scrollbar {
   height: 0;
 }
 .page{  
-  max-width: 600px;
+  max-width: 40vw;
   margin: 0 auto;
 }
 input {
@@ -36,7 +35,23 @@ span{
   font-size: 2em;
   font-weight: 600;
 }
+@media (max-width: 1600px){
+  .page{  
+    max-width: 80vw;
+  }
+}
+@media (max-width: 768px){
+  h1{
+    font-size: 3em;
+  }
+  span{
+    font-size: 1.5em;
+  }
+}
 @media (max-width: 500px){
+  .page{  
+    max-width: 90vw;
+  }
   h1{
     font-size: 2em;
   }
@@ -44,7 +59,7 @@ span{
     font-size: 1em;
   }
   img{
-    max-width: 300px;
+    max-width: 80%;
   }
 }
 
@@ -77,12 +92,12 @@ span{
 }
 
 .bayan__octicon-x{
-  height: 16px;
-  width: 16px;
+  height: 1em;
+  width: 1em;
   background-image: url("./assets/icons/octicons__x.svg");
+  background-repeat: no-repeat;
   transform: rotate(-45deg);
   transition: var(--transition);
-  display: none;
 }
 
 .bayan__img {
@@ -96,6 +111,9 @@ span{
 @media (hover: hover) {
   .bayan__content {
     color: blue;
+  }
+  .bayan__octicon-x{
+    display: none;
   }
   .bayan:hover .bayan__octicon-x {
     display: block;
